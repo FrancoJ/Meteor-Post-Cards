@@ -1,0 +1,26 @@
+/*
+ * Globals
+ */
+
+/* Links */
+
+
+body {
+  background-color: #333;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.navbar-fixed-bottom .navbar-brand {
+  float: none;
+  }
+
+.navbar-fixed-bottom .navbar-center
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: -13px;
+    text-align: center;
+    margin: auto;
+  height:100%;
+}
