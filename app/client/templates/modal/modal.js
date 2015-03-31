@@ -3,21 +3,23 @@
 /*****************************************************************************/
 Template.Modal.events({
 
-'submit #newCardForm': function(e) {
+'submit form#newCardForm': function(e,tmpl) {
     e.preventDefault();
 
     var card = {
-      title: $(e.target).find('input[name=title]').val(),
-      description: $(e.target).find('textarea[name=description]').val()
+      title: tmpl.find('input[name=title]').value,
+      description: tmpl.find('textarea[name=description]').value
     };
 
     Meteor.call('createCard', card, function(error, result) {
       // display the error to the user and abort
-      if (error)
+      if (error) {
         return alert(error.reason);
+    } else {
 
-    $('#newCardForm').reset();		
-      Router.go('home');  
+    $('#newCard').modal('hide');
+    tmpl.find('#newCardForm').reset();
+}
     });
   }
 

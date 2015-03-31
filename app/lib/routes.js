@@ -10,3 +10,11 @@ Router.route('/', {
   action: 'action',
   where: 'client'
 });
+
+
+Router.route('/card/:_id', {
+  name: 'cardDetail',
+  controller: 'CardDetailController',
+  action: 'action',
+  where: 'client'
+});

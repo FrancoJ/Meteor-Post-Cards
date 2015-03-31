@@ -1,24 +1,23 @@
-<template name="Cards">
-{{#each cards}}
-<div class="row">
+<template name="CardDetail">
+ <div class="row">
 		<div class="col-md-8 col-lg-offset-2">
 			<div class="panel panel-default">
 
            <div class="panel-heading"><h4>{{title}}</h4></div>
    			<div class="panel-body">
-              
-              <p> {{description}} </p>
+
+             
               <div class="clearfix"></div>
-              <small class="pull-right">{{time}}</small>
               <hr>
               
-              <div class="clearfix"></div>
+              <p> {{description}} </p>
+              
+              <hr>
               <span class="pull-left">- {{author}}</span>
-              <a href="{{pathFor 'cardDetail'}}" class="pull-right">View detail</a>
+             {{#if ownPost}} <button class="btn btn-danger pull-right delete">Delete</button>{{/if}}
               <div class="clearfix"></div> 
             </div>
          </div>
 		</div>
 	</div>
-{{/each}}}
 </template>
